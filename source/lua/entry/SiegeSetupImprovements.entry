@@ -1,0 +1,4 @@
+modEntry = {
+	FileHooks = "lua/SiegeSetupImprovements/FileHooks.lua",
+	Priority = 35
+}
