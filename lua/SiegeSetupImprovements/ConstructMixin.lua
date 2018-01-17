@@ -17,7 +17,7 @@ function ConstructMixin:OnConstructUpdate(deltaTime)
 			constructable:SetConstructionComplete()
 		end
             
-		end
+	end
 		
         if not self.GetCanAutoBuild or self:GetCanAutoBuild() then
         
