@@ -13,13 +13,9 @@ function ConstructMixin:OnConstructUpdate(deltaTime)
 
         if not self.GetCanAutoBuild or self:GetCanAutoBuild() then
         
-            	local multiplier = self.hasDrifterEnzyme and kDrifterBuildRate or kAutoBuildRate
-           	multiplier = multiplier * ( (HasMixin(self, "Catalyst") and self:GetIsCatalysted()) and kNutrientMistAutobuildMultiplier or 1 )
-            	self:Construct(deltaTime * multiplier)
-			
-		local frontmultiplier = kAutoBuildRate
-		frontmultiplier = frontmultiplier * ( (HasMixin(self, "PowerConsumer") and self:GetIsPowered()) or 1)
-		self:Construct(deltaTime * frontmultiplier)
+           	local multiplier = self.hasDrifterEnzyme and kDrifterBuildRate or kAutoBuildRate
+            	multiplier = multiplier * ( (HasMixin(self, "Catalyst") and self:GetIsCatalysted()) and kNutrientMistAutobuildMultiplier or 1 or ( (HasMixin(self, "PowerConsumer") and self:GetIsPowered()) ))
+           	self:Construct(deltaTime * multiplier)
         end
 		
     end
