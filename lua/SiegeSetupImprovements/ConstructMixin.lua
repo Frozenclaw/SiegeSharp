@@ -9,7 +9,7 @@ function ConstructMixin:OnConstructUpdate(deltaTime)
 	
     -- Only Alien structures auto build.
     -- Update build fraction every tick to be smooth.
-    if not self:GetIsBuilt() and GetIsAlienUnit(self) and GetIsMarineUnit(self) then
+    if not self:GetIsBuilt() and GetIsAlienUnit(self) or GetIsMarineUnit(self) then
 	
 	for index, constructable in ipairs(GetEntitiesWithMixin("Construct")) do
         
