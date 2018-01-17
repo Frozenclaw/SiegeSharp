@@ -21,7 +21,7 @@ function ConstructMixin:OnConstructUpdate(deltaTime)
     
    	 end
 	
-	if not self:GetIsBuilt() and GetIsMarineUnit(self) then
+	if not self:GetIsBuilt() and GetIsMarineUnit(self) and self.GetIsPowered then
 		self:SetConstructionComplete()
 	end 
     
